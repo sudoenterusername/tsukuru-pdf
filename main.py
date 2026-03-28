@@ -14,6 +14,9 @@ for index, row in df.iterrows():
     pdf.cell(w=0, h=12, text=row["Topic"], align = "L")
     pdf.line(10, 21, 200, 21)
 
+    for y_location in range(31, 290, 11):
+        pdf.line(10, y_location, 200, y_location)
+
     pdf.ln(275)
     pdf.set_font(family="Helvetica", style="I", size=8)
     pdf.set_text_color(100,100,254)
@@ -21,6 +24,9 @@ for index, row in df.iterrows():
 
     for page in range(row["Pages"] - 1):
         pdf.add_page()
+
+        for y_location in range(5, 295, 10):
+            pdf.line(10, y_location, 200, y_location)
 
         pdf.ln(275)
         pdf.set_font(family="Helvetica", style="I", size=8)
